@@ -4,9 +4,13 @@ import ArrowUp from "/icon-arrow-up.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import autoAnimate from "@formkit/auto-animate";
+import Features from "./Featurs";
+import { FeatureList } from "./Lists";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [isFeature, setIsFeatures] = useState(false);
+  const [isCompany, setIsCompany] = useState(false);
   const parent = useRef(null);
 
   useEffect(() => {
@@ -15,6 +19,14 @@ const Navbar = () => {
 
   const handleMenu = () => {
     setToggleMenu(!toggleMenu);
+  };
+
+  const handleFeaturesDropDown = () => {
+    setIsFeatures(!isFeature);
+  };
+
+  const handleCompanyDropDown = () => {
+    setIsCompany(!isCompany);
   };
 
   return (
@@ -27,12 +39,40 @@ const Navbar = () => {
               snap
             </h1>
 
-            <p className="hidden lg:block cursor-pointer font-medium text-sm text-MediumGray hover:text-AlmostBlack duration-75">
-              Features
-            </p>
-            <p className="hidden lg:block cursor-pointer font-medium text-sm text-MediumGray hover:text-AlmostBlack duration-75">
-              Company
-            </p>
+            <div
+              className="flex justify-center items-center gap-2 relative"
+              onClick={handleFeaturesDropDown}
+            >
+              <div className="flex justify-between items-center gap-2 cursor-pointer">
+                <p className="hidden lg:block  font-medium text-sm text-MediumGray hover:text-AlmostBlack duration-75">
+                  Features
+                </p>
+
+                <img src={ArrowDown} alt="" className="hidden lg:block" />
+              </div>
+
+              <div className="absolute top-[20px]">
+                {isFeature ? <Features /> : ""}
+              </div>
+            </div>
+
+            <div
+              className="flex justify-center items-center gap-2 relative"
+              onClick={handleCompanyDropDown}
+            >
+              <div className="flex justify-between items-center gap-2 cursor-pointer">
+                <p className="hidden lg:block cursor-pointer font-medium text-sm text-MediumGray hover:text-AlmostBlack duration-75">
+                  Company
+                </p>
+
+                <img src={ArrowDown} alt="" className="hidden lg:block" />
+              </div>
+
+              <div className="absolute top-[20px]">
+                {isCompany ? <Features /> : ""}
+              </div>
+            </div>
+
             <p className="hidden lg:block cursor-pointer font-medium text-sm text-MediumGray hover:text-AlmostBlack duration-75">
               Careers
             </p>
@@ -52,7 +92,7 @@ const Navbar = () => {
           </div>
 
           {/* mobile menu */}
-          <div className="lg:hidden " onClick={handleMenu} ref={parent}>
+          <div className="lg:hidden relative" onClick={handleMenu} ref={parent}>
             <div className="text-AlmostBlack text-2xl z-10">
               {toggleMenu ? <RxCross2 /> : <GiHamburgerMenu />}
             </div>
@@ -61,15 +101,22 @@ const Navbar = () => {
             <>
               {toggleMenu ? (
                 <div className="w-[200px] h-screen top-0 right-0 bg-AlmostWhite absolute p-5 flex flex-col gap-5">
-                  <p className="font-medium text-lg text-MediumGray hover:text-AlmostBlack duration-75">
-                    Features
-                  </p>
-                  <p className="font-medium text-lg text-MediumGray hover:text-AlmostBlack duration-75">
-                    Company
-                  </p>
+                  <div>
+                    <p className="font-medium text-lg text-MediumGray hover:text-AlmostBlack duration-75">
+                      Features
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="font-medium text-lg text-MediumGray hover:text-AlmostBlack duration-75">
+                      Company
+                    </p>
+                  </div>
+
                   <p className="font-medium text-lg text-MediumGray hover:text-AlmostBlack duration-75">
                     Careers
                   </p>
+
                   <p className="font-medium text-lg text-MediumGray hover:text-AlmostBlack duration-75">
                     About
                   </p>
