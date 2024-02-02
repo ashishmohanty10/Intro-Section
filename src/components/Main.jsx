@@ -9,8 +9,8 @@ import Meet from "/client-meet.svg";
 const Main = () => {
   return (
     <div className="container py-5">
-      <div className="lg:flex justify-between items-center px-20 gap-24 ">
-        <div className="flex flex-col gap-8">
+      <div className="flex flex-col lg:flex-row justify-between items-center px-20 gap-24 mb-5 lg:mb-0">
+        <div className="order-2 lg:order-1 flex flex-col gap-8">
           <h2 className="text-4xl text-center lg:text-left lg:text-7xl font-bold">
             Make <br /> remote work
           </h2>
@@ -26,7 +26,7 @@ const Main = () => {
             </button>
           </div>
 
-          <div className="flex justify-start items-center gap-8">
+          <div className="flex justify-center lg:justify-start items-center gap-8">
             <img src={Databiz} alt="" />
             <img src={Audiophile} alt="" />
             <img src={Meet} alt="" />
@@ -34,7 +34,7 @@ const Main = () => {
           </div>
         </div>
 
-        <div className="w-[500px] flex justify-center items-center">
+        <div className="order-1 lg:order-2 w-[500px] flex justify-center items-center">
           <img src={DesktopImg} alt="" />
         </div>
       </div>
