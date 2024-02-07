@@ -1,8 +1,9 @@
-# React + Vite
+Done using react and vite 
+Live Link - https://introsection-frontendmentor.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/ashishmohanty10/Intro-Section/assets/149661785/65045ebf-4097-4295-9c41-6b9e7831b3e1)
+![image](https://github.com/ashishmohanty10/Intro-Section/assets/149661785/441cf809-6d69-4670-ada9-17350a755c2c)
+
+
