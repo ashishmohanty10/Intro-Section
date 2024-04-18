@@ -34,20 +34,20 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <div className="container py-5 relative">
-        <nav className="flex justify-between items-center ">
+      <div className="container relative py-5">
+        <nav className="flex items-center justify-between ">
           {/* right nav */}
-          <div className="flex justify-between items-center gap-10">
-            <h1 className="cursor-pointer font-bold text-3xl text-AlmostBlack">
+          <div className="flex items-center justify-between gap-10">
+            <h1 className="text-3xl font-bold cursor-pointer text-AlmostBlack">
               snap
             </h1>
 
             <div
-              className="flex justify-center items-center gap-2 relative"
+              className="relative flex items-center justify-center gap-2"
               onClick={handleFeaturesDropDown}
             >
-              <div className="flex justify-between items-center gap-2 cursor-pointer">
-                <p className="hidden md:block  font-medium text-sm text-MediumGray hover:text-AlmostBlack duration-75">
+              <div className="flex items-center justify-between gap-2 cursor-pointer">
+                <p className="hidden text-sm font-medium duration-75 md:block text-MediumGray hover:text-AlmostBlack">
                   Features
                 </p>
 
@@ -64,11 +64,11 @@ const Navbar = () => {
             </div>
 
             <div
-              className="flex justify-center items-center gap-2 relative"
+              className="relative flex items-center justify-center gap-2"
               onClick={handleCompanyDropDown}
             >
-              <div className="flex justify-between items-center gap-2 cursor-pointer">
-                <p className="hidden md:block cursor-pointer font-medium text-sm text-MediumGray hover:text-AlmostBlack duration-75">
+              <div className="flex items-center justify-between gap-2 cursor-pointer">
+                <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
                   Company
                 </p>
 
@@ -84,32 +84,34 @@ const Navbar = () => {
               </div>
             </div>
 
-            <p className="hidden md:block cursor-pointer font-medium text-sm text-MediumGray hover:text-AlmostBlack duration-75">
+            <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
               Careers
             </p>
-            <p className="hidden md:block cursor-pointer font-medium text-sm text-MediumGray hover:text-AlmostBlack duration-75">
+            <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
               About
             </p>
           </div>
 
           {/* left nav */}
-          <div className=" flex gap-6">
-            <button className="hidden md:block font-medium text-sm py-1 px-3 text-MediumGray hover:text-AlmostBlack duration-75">
+          <div className="flex gap-6 ">
+            <button className="hidden px-3 py-1 text-sm font-medium duration-75 md:block text-MediumGray hover:text-AlmostBlack">
               Login
             </button>
-            <button className="hidden md:block text-sm border-2  border-MediumGray py-1 px-3 text-MediumGray rounded-lg hover:text-AlmostBlack  hover:border-AlmostBlack duration-75">
+            <button className="hidden px-3 py-1 text-sm duration-75 border-2 rounded-lg md:block border-MediumGray text-MediumGray hover:text-AlmostBlack hover:border-AlmostBlack">
               Register
             </button>
           </div>
 
           {/* mobile menu */}
           <div className="md:hidden">
-            <div className=" text-2xl z-50" onClick={handleMenu} ref={parent}>
-              {toggleMenu ? <img src={Close} /> : <img src={Hamburger} />}
+            <div className="absolute top-0 z-50 text-2xl right-5" ref={parent}>
+              <div onClick={handleMenu}>
+                {toggleMenu ? <img src={Close} /> : <img src={Hamburger} />}
+              </div>
             </div>
 
             {/* mobile navbar */}
-            <div className="absolute top-5 right-0">
+            <div className="absolute right-0 top-5">
               {toggleMenu ? (
                 <>
                   <MobileNavbar />
